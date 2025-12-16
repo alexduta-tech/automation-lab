@@ -1,0 +1,25 @@
+# Virtual Environment
+venv/
+*.venv
+.env
+.env.*
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Log files
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# User uploaded files
+app/storage/profile_pics/*

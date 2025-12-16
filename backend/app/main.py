@@ -1,0 +1,31 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from app.api import users
+
+# -----------------------------------------
+# Instructions to run backend locally:
+# activate venv: .\venv\Scripts\activate
+# swithch interpreter: Ctrl+Shift+P > Python: Select Interpreter > select venv
+# local run: uvicorn app.main:app --reload --port 8001
+# -----------------------------------------
+
+# Create FastAPI instance
+app = FastAPI()
+
+# Allow frontend to call backend
+origins = [
+    "http://localhost:5173",  # frontend Vite default port
+    "http://localhost:3000" # frontend Docker port
+]
+
+# Middleware for CORS handling. CORS = Cross-Origin Resource Sharing (sharing resources between different origins/domains in the browser environment)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Routes registration
+app.include_router(users.router)

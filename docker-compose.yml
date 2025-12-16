@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    depends_on:
+      - backend
+    networks:
+      - automation-network
+
+  backend:
+    build:
+      context: ./backend/app # Path to the backend contains an app folder
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    networks:
+      - automation-network
+
+networks:
+  automation-network: # create a shared Docker network for communication between containers. This is created when the installation .bat file is run.
+    external: true
