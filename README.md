@@ -26,6 +26,8 @@ Automation Playground is a user management application that provides a complete 
 - **Pydantic** 2.12.5 - Data validation using Python type annotations (used to ensure data integrity and consistency)
 - **Python Multipart** 0.0.20 - Multipart request handling (used for file uploads)
 - **Email Validator** 2.3.0 - Email validation (used to validate user emails)
+<img width="1867" height="577" alt="image" src="https://github.com/user-attachments/assets/5c9801ee-bdf9-418b-962f-52118ad2100d" />
+
 
 ### Frontend
 - **JavaScript** - Client-side scripting language
@@ -34,10 +36,14 @@ Automation Playground is a user management application that provides a complete 
 - **React Router DOM** 7+ - Client-side routing (used for navigation within the application)
 - **Vite** 7+ - Build tool and dev server (used for frontend development and deployment)
 - **ESLint** - Code quality tool (used to ensure code quality and maintainability)
+<img width="1725" height="962" alt="image" src="https://github.com/user-attachments/assets/e61bc015-4f42-46ec-a144-625462f945d0" />
+
 
 ### Infrastructure
 - **Docker** - Containerization (used to package and deploy applications)
 - **Nginx** - Web server for frontend (web server and reverse proxy, forwarding requests to the backend)
+<img width="1182" height="186" alt="image" src="https://github.com/user-attachments/assets/2a8e37cf-366e-4f1a-a699-2616394d6b31" />
+
 
 ## Project Structure
 
@@ -65,7 +71,7 @@ Install the following dependencies:
 ### Installation
 1. Clone the repository or navigate to the project directory
    ```sh
-   git clone https://github.com/your_username_/your_project.git
+   git clone https://github.com/alexduta-tech/automation-lab.git
    ```
 
 2. Build and run the containers, run bat file::
@@ -77,7 +83,7 @@ Install the following dependencies:
    - **Backend API**: http://localhost:8000
    - **API Docs**: http://localhost:8000/docs
 
-## Option 2: Local setup (recommended for development)
+## Option 2: Local setup (recommended for development only)
 
 ### Backend Setup
 
@@ -91,7 +97,7 @@ Install the following dependencies:
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/your_project.git
+   git clone https://github.com/alexduta-tech/automation-lab.git
    ```
 2. Create and activate a virtual environment:
    ```sh
@@ -129,7 +135,7 @@ Install the following dependencies:
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/your_project.git
+   git https://github.com/alexduta-tech/automation-lab.git
    ```
 2. Navigate to the frontend directory
     ```sh
