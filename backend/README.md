@@ -18,7 +18,7 @@ Install the following dependencies:
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/your_project.git
+   git clone https://github.com/alexduta-tech/automation-lab.git
    ```
 2. Create and activate a virtual environment:
    ```sh
@@ -57,7 +57,10 @@ Run the installation .bat file:
 run_frontend_backend.bat 
 ```
 
-This will install both backen and frontend apps
+This will install both backen and frontend apps.
+
+Note: Initial Docker execution may take additional time to build the image and download dependencies. This is a one-time cost; later runs benefit from Docker’s caching mechanism.
+
 
 ### Usage
 

@@ -78,6 +78,9 @@ Install the following dependencies:
    ```bash
    run_frontend_backend.bat
    ```
+   
+   Note: Initial Docker execution may take additional time to build the image and download dependencies. This is a one-time cost; later runs benefit from Docker’s caching mechanism.
+
 ### Access the application:
    - **Frontend**: http://localhost:3000
    - **Backend API**: http://localhost:8000
