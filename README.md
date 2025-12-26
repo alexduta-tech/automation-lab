@@ -57,7 +57,8 @@ AutomationPlayground/
 ├── run_frontend_backend.bat   # Windows batch script to run both services
 └── README.md                  # This file
 ```
-For more details, refer to backend and frontend folders in the README.md 
+
+- For more details, refer to backend and frontend folders in the README.md 
 
 ## Installation & Setup
 
@@ -112,22 +113,25 @@ Install the following dependencies:
    python -m venv venv
    venv\Scripts\activate
    ```
-3. Install the dependencies:
+3. Select interpreter from Visual Studio Code:
+    Open the Command Palette (Ctrl+Shift+P), search for the Python: Select Interpreter command, and select it (e.g. .venv\Scripts\python.exe)
+    
+4. Install the dependencies:
    ```sh
    pip install -r app/requirements.txt
    ```
 
 #### Usage
-Activate virtual environment: 
-```sh
-venv\Scripts\activate
-```
+1. Activate virtual environment (if not already active): 
+   ```sh
+   venv\Scripts\activate
+   ```
 
-To run the application, use the following command from the root directory:
+2. To run the application, use the following command from the root directory:
 
-```sh
-uvicorn app.main:app --reload
-```
+   ```sh
+   uvicorn app.main:app --reload
+   ```
 
 This will start the server at `http://127.0.0.1:8000`. You can access the API documentation at `http://127.0.0.1:8000/docs`.
 
@@ -156,11 +160,11 @@ Install the following dependencies:
 
 #### Usage
 
-To run the application, use the following command from the `frontend` directory:
+1. To run the application, use the following command from the `frontend` directory:
 
-```sh
-npm run dev
-```
+   ```sh
+   npm run dev
+   ```
 
 This will start the development server, typically at `http://localhost:5173`.
 
