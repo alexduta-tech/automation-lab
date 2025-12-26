@@ -74,12 +74,17 @@ Install the following dependencies:
    git clone https://github.com/alexduta-tech/automation-lab.git
    ```
 
-2. Build and run the containers, run bat file::
-   ```bash
-   run_frontend_backend.bat
-   ```
-   
-   Note: Initial Docker execution may take additional time to build the image and download dependencies. This is a one-time cost; later runs benefit from Docker’s caching mechanism.
+2. Docker setup is automated using a batch script.
+    1. Ensure Docker Desktop is installed and running
+    2. Run the setup script:
+
+         ```bash
+         run_frontend_backend.bat
+         ```
+
+   - This will build the Docker images and start the containers in the background.
+
+   - Note: Initial Docker execution may take additional time to build the image and download dependencies. This is a one-time cost; later runs benefit from Docker’s caching mechanism.
 
 ### Access the application:
    - **Frontend**: http://localhost:3000
