@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import '../styles/App.css';
 import BackButton from "../components/BackButton";
+import { API_BASE } from "../config/config";
 
 // User Dialogs page to get random user names using different dialog types
 export default function UserDialogs() {
@@ -16,7 +17,7 @@ export default function UserDialogs() {
     const fetchUsers = async () => {
         try {
             const params = new URLSearchParams({ size: 10, page: 1 });
-            const res = await fetch(`http://localhost:8000/users?${params.toString()}`);
+            const res = await fetch(`${API_BASE}/users?${params.toString()}`);
             if (!res.ok) throw new Error("Failed to fetch users");
             const data = await res.json();
             if (Array.isArray(data)) return data;

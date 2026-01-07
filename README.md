@@ -82,6 +82,7 @@ Install the following dependencies:
          ```bash
          run_frontend_backend.bat
          ```
+    3. Select Y to set up the installation for locall execution or N to set up for Docker Docker execution. (config\config.js will be updated accordingly, respectivly API_BASE URL will be set to http://localhost:8000 or http://backend:8000)
 
    - This will build the Docker images and start the containers in the background.
 

@@ -64,31 +64,33 @@ Use the server at `http://localhost:3000`.
 ```
 .
 ├── public
-│   └── vite.svg
+│   └── vite.svg  # vite logo
 ├── src
 │   ├── assets
-│   │   └── react.svg
+│   │   └── react.svg         # react logo
 │   ├── components
-│   │   ├── BackButton.jsx
-│   │   └── WidgetCard.jsx
+│   │   ├── BackButton.jsx    # back button
+│   │   └── WidgetCard.jsx    # widget card
 │   ├── pages
-│   │   ├── CreateUser.jsx
-│   │   ├── Home.jsx
-│   │   ├── UserDialogs.jsx
-│   │   ├── UserList.jsx
-│   │   └── UserSearchOverlap.jsx
+│   │   ├── CreateUser.jsx    # create user page
+│   │   ├── Home.jsx          # home page 
+│   │   ├── UserDialogs.jsx   # user dialogs page     
+│   │   ├── UserList.jsx      # list users page
+│   │   └── UserSearchOverlap.jsx   # user search overlap page
 │   ├── styles
-│   │   └── App.css
-│   ├── App.jsx
-│   ├── index.css
-│   └── main.jsx
-├── .dockerignore
-├── .gitignore
-├── Dockerfile
-├── eslint.config.js
-├── index.html
-├── nginx.conf
-├── package-lock.json
-├── package.json
-└── vite.config.js
+│   │   └── App.css  # app styles
+│   ├── config
+│   │   └── config.js # config for frontend (e.g. store API_BASE url which is different based on local (localhost) or Docker(backend))
+│   ├── App.jsx      # app entry point
+│   ├── index.css    # app styles
+│   └── main.jsx     # main entry point
+├── .dockerignore    # docker ignore file
+├── .gitignore       # git ignore file
+├── Dockerfile       # containerization
+├── eslint.config.js # code quality
+├── index.html       # website index.html 
+├── nginx.conf       # nginx config
+├── package-lock.json   # lock file for dependencies
+├── package.json        
+└── vite.config.js      # vite config, server setup
 ```

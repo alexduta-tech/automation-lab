@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import BackButton from "../components/BackButton";
+import { API_BASE } from "../config/config";
 
 // User List page with filtering and pagination
 export default function UserList() {
@@ -34,7 +35,7 @@ export default function UserList() {
             if (role) params.append("role", role);
             if (status) params.append("status", status);
 
-            const res = await fetch(`http://localhost:8000/users?${params.toString()}`);
+            const res = await fetch(`${API_BASE}/users?${params.toString()}`);
             const data = await res.json();
 
             setUsers(data.items || []);

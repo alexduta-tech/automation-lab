@@ -15,7 +15,8 @@ app = FastAPI()
 # Allow frontend to call backend
 origins = [
     "http://localhost:5173",  # frontend Vite default port
-    "http://localhost:3000" # frontend Docker port
+    "http://localhost:3000", # frontend Docker port
+    "http://frontend", # frontend Docker service name without port
 ]
 
 # Middleware for CORS handling. CORS = Cross-Origin Resource Sharing (sharing resources between different origins/domains in the browser environment)

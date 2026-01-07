@@ -1,10 +1,6 @@
 # # Build Docker image
 # docker build -t frontend-app .
 
-# # Run container
-# docker run -p 3000:80 frontend-app
-# Your app will now be available at http://localhost:3000
-
 # Stage 1: Build the React app
 FROM node:20-alpine AS build
 

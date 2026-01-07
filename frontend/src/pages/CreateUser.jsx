@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import '../styles/App.css';
 import BackButton from "../components/BackButton";
+import { API_BASE } from "../config/config";
 
 export default function CreateUser() {
   const [name, setName] = useState("");
@@ -41,7 +42,7 @@ export default function CreateUser() {
 
     try {
       // Step 1: Create user without picture
-      const res = await fetch("http://localhost:8000/users", {
+      const res = await fetch(`${API_BASE}/users`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -67,7 +68,7 @@ export default function CreateUser() {
         const formData = new FormData();
         formData.append("file", profilePic);
 
-        await fetch(`http://localhost:8000/users/${userId}/upload-picture`, {
+        await fetch(`${API_BASE}/users/${userId}/upload-picture`, {
           method: "POST",
           body: formData,
         });
@@ -105,7 +106,7 @@ export default function CreateUser() {
         const randomStatus = ["active", "disabled"][Math.floor(Math.random() * 2)];
 
         // Create user API call
-        await fetch("http://localhost:8000/users", {
+        await fetch(`${API_BASE}/users`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -121,7 +122,7 @@ export default function CreateUser() {
       setMessageType("success");
     } catch (err) {
       console.error(err);
-      setMessage("Failed to create users.");
+      setMessage(`Failed to create users: ${err.message}`);
       setMessageType("error");
     } finally {
       setLoading(false);

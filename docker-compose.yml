@@ -24,6 +24,8 @@ services:
     restart: unless-stopped
     networks:
       - automation-network
+    volumes:
+      - ./backend/app/storage:/app/app/storage # Persist storage data
 
 networks:
   automation-network: # create a shared Docker network for communication between containers. This is created when the installation .bat file is run.

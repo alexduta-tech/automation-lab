@@ -72,17 +72,19 @@ Use the server at `http://localhost:8000`. You can access the API documentation 
 .
 ├── app
 │   ├── api
-│   │   └── users.py
+│   │   └── users.py       # user CRUD operations
 │   ├── schemas
-│   │   └── user_schema.py
+│   │   └── user_schema.py # user data validation
 │   ├── storage
-│   │   ├── users.json
-│   │   └── profile_pics
+│   │   ├── users.json     # store user data
+│   │   └── profile_pics   # store profile pictures
 │   ├── utils
-│   │   └── file_ops.py
+│   │   └── file_ops.py    # file operations
 │   ├── __init__.py
-│   ├── Dockerfile
-│   ├── main.py
-│   └── requirements.txt
-└── venv
+│   ├── Dockerfile         # containerization
+│   ├── .dockerignore      # docker ignore file
+│   ├── .gitignore         # git ignore file
+│   ├── main.py            # CORS setup, allow origin
+│   └── requirements.txt   # dependencies
+└── venv 
 ```
