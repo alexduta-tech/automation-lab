@@ -16,16 +16,27 @@ export default function UserDialogs() {
 
     // Fetch all users from API
     const fetchUsers = async () => {
+        let allUsers = [];
+        let page = 1;
+        let hasMore = true;        
         try {
-            const params = new URLSearchParams({ size: 10, page: 1 });
-            const res = await fetch(`${API_BASE}/users?${params.toString()}`);
-            if (!res.ok) throw new Error("Failed to fetch users");
-            const data = await res.json();
-            if (Array.isArray(data)) return data;
-            return data.items || [];
+            while (hasMore) {
+                const params = new URLSearchParams({ size: 100, page });
+                const res = await fetch(`${API_BASE}/users?${params.toString()}`);
+                if (!res.ok) throw new Error(`Failed to fetch page ${page}`);
+                const data = await res.json();
+                const items = Array.isArray(data) ? data : (data.items || []);
+                if (items.length > 0) {
+                    allUsers = [...allUsers, ...items];
+                    page++;
+                } else {
+                    hasMore = false;
+                }
+            }
+            return allUsers;
         } catch (err) {
-            console.error(err);
-            return [];
+            console.error("Error fetching all users:", err);
+            return allUsers;
         }
     };
 
@@ -75,7 +86,7 @@ export default function UserDialogs() {
 
                     <div style={styles.buttons}>
                         <p>Note: There is an overlapping element above the scrollable area.</p>
-                        <button id="alertBtn" disabled={loading} style={styles.button} onClick={getUserName}>
+                        <button id="getRandomUserBtn" disabled={loading} style={styles.button} onClick={getUserName}>
                             {loading ? "Getting..." : "Get Random User Name"}
 
                         </button>
