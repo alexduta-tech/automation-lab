@@ -17,6 +17,10 @@ A full-stack web application for managing users, built with a FastAPI backend an
 
 Automation Playground is a user management application that provides a complete system for creating, viewing, and managing user profiles. The application features a modern React frontend and a robust FastAPI backend with file storage for user data and profile pictures.
 
+The UI test cases used with this application, described independently of any automation framework, are in [TEST_CASES.md](TEST_CASES.md).
+
+> **Note:** Automation Playground is a deliberately simple test target for UI test automation. It has no authentication or access control and stores its data in plain files. Do not use it in production or expose it to untrusted networks.
+
 ## Tech Stack
 
 ### Backend
@@ -205,6 +209,10 @@ Once the backend is running, access the interactive API documentation at:
    - **Pydantic** for Python type validation
    - **FastAPI** best practices
 
+## How to cite
+
+If you use this application in your work, please cite it as described in [CITATION.cff](CITATION.cff) (on GitHub: "Cite this repository").
+
 ## License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) and [NOTICE](NOTICE) files for details.
