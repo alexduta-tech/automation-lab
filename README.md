@@ -59,6 +59,7 @@ AutomationPlayground/
 │
 ├── docker-compose.yml         # Docker Compose configuration
 ├── run_frontend_backend.bat   # Windows batch script to run both services
+├── run_frontend_backend.sh    # Linux and macOS shell script to run both services
 └── README.md                  # This file
 ```
 
@@ -76,17 +77,18 @@ Install the following dependencies:
 ### Installation
 1. Clone the repository or navigate to the project directory
    ```sh
-   git clone https://github.com/alexduta-tech/automation-lab.git
+   git clone https://github.com/alex-duta/automation-lab.git
    ```
 
-2. Docker setup is automated using a batch script.
+2. Docker setup is automated using a script: `run_frontend_backend.bat` on Windows, `run_frontend_backend.sh` on Linux and macOS. Both do the same.
     1. Ensure Docker Desktop is installed and running
     2. Run the setup script:
 
          ```bash
-         run_frontend_backend.bat
+         run_frontend_backend.bat       # Windows
+         ./run_frontend_backend.sh      # Linux, macOS
          ```
-    3. Select Y to set up the installation for locall execution or N to set up for Docker Docker execution. (config\config.js will be updated accordingly, respectivly API_BASE URL will be set to http://localhost:8000 or http://backend:8000)
+    3. Select Y to set up the installation for local execution or N to set up for Docker execution. (config\config.js will be updated accordingly, respectively API_BASE URL will be set to http://localhost:8000 or http://backend:8000)
 
    - This will build the Docker images and start the containers in the background.
 
@@ -105,23 +107,28 @@ Install the following dependencies:
 Install the following dependencies:
 
 * Python 3.12+ - https://www.python.org/downloads/
-* pip (installed wih Python)
+* pip (installed with Python)
 
 #### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/alexduta-tech/automation-lab.git
+   git clone https://github.com/alex-duta/automation-lab.git
    ```
-2. Create and activate a virtual environment:
+2. Navigate to the backend directory
+    ```sh
+    cd backend
+    ```
+3. Create and activate a virtual environment:
    ```sh
    python -m venv venv
-   venv\Scripts\activate
+   venv\Scripts\activate          # Windows
+   source venv/bin/activate       # Linux, macOS
    ```
-3. Select interpreter from Visual Studio Code:
-    Open the Command Palette (Ctrl+Shift+P), search for the Python: Select Interpreter command, and select it (e.g. .venv\Scripts\python.exe)
+4. Select interpreter from Visual Studio Code:
+    Open the Command Palette (Ctrl+Shift+P), search for the Python: Select Interpreter command, and select it (e.g. venv\Scripts\python.exe)
     
-4. Install the dependencies:
+5. Install the dependencies:
    ```sh
    pip install -r app/requirements.txt
    ```
@@ -129,10 +136,11 @@ Install the following dependencies:
 #### Usage
 1. Activate virtual environment (if not already active): 
    ```sh
-   venv\Scripts\activate
+   venv\Scripts\activate          # Windows
+   source venv/bin/activate       # Linux, macOS
    ```
 
-2. To run the application, use the following command from the root directory:
+2. To run the application, use the following command from the `backend` directory:
 
    ```sh
    uvicorn app.main:app --reload
@@ -152,7 +160,7 @@ Install the following dependencies:
 
 1. Clone the repo
    ```sh
-   git https://github.com/alexduta-tech/automation-lab.git
+   git clone https://github.com/alex-duta/automation-lab.git
    ```
 2. Navigate to the frontend directory
     ```sh
@@ -161,6 +169,10 @@ Install the following dependencies:
 3. Install the dependencies:
    ```sh
    npm install
+   ```
+4. Point the frontend to the local backend: in `src/config/config.js`, `API_BASE` must be `http://localhost:8000`. The file in the repository can contain `http://backend:8000`, the address used in Docker.
+   ```js
+   export const API_BASE = "http://localhost:8000";
    ```
 
 #### Usage

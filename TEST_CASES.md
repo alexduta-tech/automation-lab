@@ -2,8 +2,8 @@
 
 This file describes the 17 UI test cases for Automation Playground, independent of any automation framework. The same suite is implemented in two reference implementations:
 
-- Selenium WebDriver (Python): [selenium-python-framework](https://github.com/alexduta-tech/selenium-python-framework)
-- Playwright (Python): [playwright-python-framework](https://github.com/alexduta-tech/playwright-python-framework)
+- Selenium WebDriver (Python): [selenium-python-framework](https://github.com/alex-duta/selenium-python-framework)
+- Playwright (Python): [playwright-python-framework](https://github.com/alex-duta/playwright-python-framework)
 
 To compare another framework, language or environment with these two, implement the test cases below and follow the rules in [Implementing the suite](#implementing-the-suite).
 
@@ -169,7 +169,7 @@ Expected: the error message contains `Prompt result: Prompt canceled.`
 
 ## Implementing the suite
 
-Results are only comparable with the reference implementations if a new implementation behaves the same way in the points below.
+If you write a new implementation, it has to do the following the same way as the two reference implementations. Otherwise, its results cannot be compared with theirs.
 
 - **Browser life cycle:** start a new browser for each test and close it after the test.
 - **Browser:** headless, window or viewport 1920 × 1080.

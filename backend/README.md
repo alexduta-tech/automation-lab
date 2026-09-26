@@ -1,6 +1,6 @@
 # Backend Project
 
-This project is a FastAPI backend for the Automation Playground system 
+This project is a FastAPI backend for the Automation Playground system.
 
 ## Getting Started
 
@@ -11,21 +11,26 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 Install the following dependencies:
 
-* Python 3.13+ - https://www.python.org/downloads/
-* pip (installed wih Python)
+* Python 3.12+ - https://www.python.org/downloads/
+* pip (installed with Python)
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/alexduta-tech/automation-lab.git
+   git clone https://github.com/alex-duta/automation-lab.git
    ```
-2. Create and activate a virtual environment:
+2. Navigate to the backend directory
+    ```sh
+    cd backend
+    ```
+3. Create and activate a virtual environment:
    ```sh
    python -m venv venv
-   venv\Scripts\activate
+   venv\Scripts\activate          # Windows
+   source venv/bin/activate       # Linux, macOS
    ```
-3. Install the dependencies:
+4. Install the dependencies:
    ```sh
    pip install -r app/requirements.txt
    ```
@@ -33,10 +38,11 @@ Install the following dependencies:
 ### Usage
 Activate virtual environment: 
 ```sh
-venv\Scripts\activate
+venv\Scripts\activate          # Windows
+source venv/bin/activate       # Linux, macOS
 ```
 
-To run the application, use the following command from the root directory:
+To run the application, use the following command from the `backend` directory:
 
 ```sh
 uvicorn app.main:app --reload
@@ -52,12 +58,13 @@ Install the following dependencies:
 
 ### Installation
 
-Run the installation .bat file: 
+From the repository root, run the setup script (see the main README for the local or Docker execution question):
 ```sh
-run_frontend_backend.bat 
+run_frontend_backend.bat       # Windows
+./run_frontend_backend.sh      # Linux, macOS
 ```
 
-This will install both backen and frontend apps.
+This will install both backend and frontend apps.
 
 Note: Initial Docker execution may take additional time to build the image and download dependencies. This is a one-time cost; later runs benefit from Docker’s caching mechanism.
 

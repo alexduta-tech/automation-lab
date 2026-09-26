@@ -5,8 +5,8 @@ from app.api import users
 # -----------------------------------------
 # Instructions to run backend locally:
 # activate venv: .\venv\Scripts\activate
-# swithch interpreter: Ctrl+Shift+P > Python: Select Interpreter > select venv
-# local run: uvicorn app.main:app --reload --port 8001
+# switch interpreter: Ctrl+Shift+P > Python: Select Interpreter > select venv
+# local run: uvicorn app.main:app --reload --port 8000
 # -----------------------------------------
 
 # Create FastAPI instance

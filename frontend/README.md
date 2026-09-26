@@ -11,14 +11,14 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 Install the following dependencies:
 
-* Node.js (required for React tooling) - https://nodejs.org/en/download/
+* Node.js 24+ (required for React tooling) - https://nodejs.org/en/download/
 * npm (installed with Node.js)
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/alexduta-tech/automation-lab.git
+   git clone https://github.com/alex-duta/automation-lab.git
    ```
 2. Navigate to the frontend directory
     ```sh
@@ -27,6 +27,10 @@ Install the following dependencies:
 3. Install the dependencies:
    ```sh
    npm install
+   ```
+4. Point the frontend to the local backend: in `src/config/config.js`, `API_BASE` must be `http://localhost:8000`. The file in the repository can contain `http://backend:8000`, the address used in Docker.
+   ```js
+   export const API_BASE = "http://localhost:8000";
    ```
 
 ### Usage
@@ -46,9 +50,10 @@ Install the following dependencies:
 * Docker Desktop  
 
 ### Installation
-Run the installation .bat file: 
+From the repository root, run the setup script (see the main README for the local or Docker execution question):
 ```sh
-run_frontend_backend.bat 
+run_frontend_backend.bat       # Windows
+./run_frontend_backend.sh      # Linux, macOS
 ```
 
 This will install both backend and frontend apps.
